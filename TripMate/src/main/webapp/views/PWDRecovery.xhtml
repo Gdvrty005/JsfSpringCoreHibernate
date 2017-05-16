@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Login</title>
+	<meta
+		content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+		name="viewport" />
+	<link rel="stylesheet"
+		href="#{request.contextPath}/bootstrap/bootstrap.min.css" />
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" />
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
+	<link rel="stylesheet"
+		href="#{request.contextPath}/Style/css/AdminLTE.min.css" />
+	<link rel="stylesheet" href="#{request.contextPath}/Style/css/blue.css" />
+	<!-- <script src="#{request.contextPath}/jQuery/jquery-2.2.3.min.js" /> -->
+	<script src="#{request.contextPath}/bootstrap/js/bootstrap.min.js" />
+	<script src="#{request.contextPath}/Style/iCheck/icheck.min.js" />
+
+
+	<script>
+	 $(function () {
+	        $('input').iCheck({
+	            checkboxClass: 'icheckbox_square-blue',
+	            radioClass: 'iradio_square-blue',
+	            increaseArea: '20%' // optional
+	        });
+	    });
+	 function checkEmail(){
+		
+	 }
+	</script>
+</h:head>
+<h:body styleClass="hold-transition login-page">
+	<div class="login-box">
+		<div class="login-logo">
+			<h:form>
+				<h:commandLink action="#{homeBean.getPage}">
+					<h1>
+						<b>Trip</b>Mate
+					</h1>
+					<f:setPropertyActionListener target="#{homeBean.pageName}"
+						value="Main" />
+				</h:commandLink>
+			</h:form>
+		</div>
+		<div class="login-box-body">
+			<p class="login-box-msg">Sign in to start your session</p>
+			<h:messages id="message" globalOnly="false" style="color:red"/>
+			<h:form>
+				<div class="form-group has-feedback">
+					<h:inputText id="email" styleClass="form-control" value="#{loginBean.emailId}" required="true" requiredMessage="Please provide EmailId" validatorMessage="Please provide Email in valid format">
+					<f:validateRegex pattern="[A-Z0-9a-z._%-]+@[A-Z0-9a-z._%-]+\.[A-Za-z]{2,4}" />
+					</h:inputText> 
+						<span class="glyphicon glyphicon-envelope form-control-feedback"/>
+						<p:watermark value="Email" for="email"/>
+				</div>
+				<div class="form-group has-feedback">
+					<h:inputText id="confirmEmail" class="form-control" value="#{loginBean.confirmEmailId}" required="true" requiredMessage="Please provide Confirm EmailId" validatorMessage="Please provide Email in valid format">
+					<f:validateRegex pattern="[A-Z0-9a-z._%-]+@[A-Z0-9a-z._%-]+\.[A-Za-z]{2,4}" />
+					</h:inputText>  
+					<span class="glyphicon glyphicon-envelope form-control-feedback"/>
+						<p:watermark value="Confirm Email" for="confirmEmail"/>
+				</div>
+				<div class="row">
+				<div class="col-xs-4"></div>
+				<div class="col-xs-4"></div>
+					<div class="col-xs-4">
+						<h:commandButton action="#{loginBean.recoverPassword}" value="Recover" 
+						styleClass="btn btn-primary btn-block btn-flat"/>
+					</div>
+				</div>
+				</h:form>
+				<h:form>
+				<h:commandLink value="Register a new membership" action="Register"/>
+			</h:form>
+		</div>
+	</div>
+</h:body>
+</html>

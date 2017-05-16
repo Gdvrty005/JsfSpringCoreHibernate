@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<!-- Declaration of BO's -->
+	<bean id="registerBo" class="com.ucm.bo.impl.RegisterBoImpl">
+		<property name="registerDao" ref="registerDao" />
+	</bean>
+
+	<bean id="loginBo" class="com.ucm.bo.impl.LoginBoImpl">
+		<property name="loginDao" ref="loginDao" />
+	</bean>
+	
+	
+	
+	<bean id="agentBo" class="com.ucm.bo.impl.AgentBoImpl">
+		<property name="agentDao" ref="agentDao" />
+	</bean>
+
+	<bean id="mailBean" class="com.ucm.bo.impl.SendMailImpl">
+		<property name="mailSender" ref="mailSender" />
+		<property name="templateMessage" ref="templateMessage" />
+	</bean>
+
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.gmail.com" />
+		<property name="username" value="teamtripmate@gmail.com" />
+		<property name="password" value="AdminTeam" />
+		<property name="port" value="587" />
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="templateMessage" class="org.springframework.mail.SimpleMailMessage">
+		<property name="from" value="teamtripmate@gamil.com" />
+		<property name="subject" value="Message from Team TripMate" />
+	</bean>
+	
+	<!-- Declaration of DAO's -->
+	<bean id="registerDao" class="com.ucm.dao.impl.RegisterDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="loginDao" class="com.ucm.dao.impl.LoginDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="agentDao" class="com.ucm.dao.impl.AgentDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+</beans>

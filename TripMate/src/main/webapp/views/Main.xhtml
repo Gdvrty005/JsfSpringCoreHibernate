@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Main Page</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+
+	<title>TripMate</title>
+
+	<link rel="stylesheet"
+		href="#{request.contextPath}/bootstrap/bootstrap.min.css" />
+
+	<link rel="stylesheet" href="#{request.contextPath}/Style/css/home.css" />
+
+	<link rel="stylesheet"
+		href="#{request.contextPath}/Style/font-awesome/css/font-awesome.min.css"
+		type="text/css" />
+	<link
+		href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
+		rel="stylesheet" type="text/css" />
+
+	<script src="#{request.contextPath}/jQuery/jquery.js" />
+	<script src="#{request.contextPath}/bootstrap/js/bootstrap.min.js" />
+	<script>
+		// Closes the sidebar menu
+		$("#menu-close").click(function(e) {
+			e.preventDefault();
+			$("#sidebar-wrapper").toggleClass("active");
+		});
+		// Opens the sidebar menu
+		$("#menu-toggle").click(function(e) {
+			alert("Avinash");
+			e.preventDefault();
+			$("#sidebar-wrapper").toggleClass("active");
+		});
+		// Scrolls to the selected menu item on the page
+		$(function() {
+			$(
+					'a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])')
+					.click(
+							function() {
+								if (location.pathname.replace(/^\//, '') == this.pathname
+										.replace(/^\//, '')
+										|| location.hostname == this.hostname) {
+									var target = $(this.hash);
+									target = target.length ? target
+											: $('[name=' + this.hash.slice(1)
+													+ ']');
+									if (target.length) {
+										$('html,body').animate({
+											scrollTop : target.offset().top
+										}, 1000);
+										return false;
+									}
+								}
+							});
+		});
+		//#to-top button appears after scrolling
+		var fixed = false;
+		$(document).scroll(function() {
+			if ($(this).scrollTop() > 250) {
+				if (!fixed) {
+					fixed = true;
+					// $('#to-top').css({position:'fixed', display:'block'});
+					$('#to-top').show("slow", function() {
+						$('#to-top').css({
+							position : 'fixed',
+							display : 'block'
+						});
+					});
+				}
+			} else {
+				if (fixed) {
+					fixed = false;
+					$('#to-top').hide("slow", function() {
+						$('#to-top').css({
+							display : 'none'
+						});
+					});
+				}
+			}
+		});
+		// Disable Google Maps scrolling
+		// See http://stackoverflow.com/a/25904582/1607849
+		// Disable scroll zooming and bind back the click event
+		var onMapMouseleaveHandler = function(event) {
+			var that = $(this);
+			that.on('click', onMapClickHandler);
+			that.off('mouseleave', onMapMouseleaveHandler);
+			that.find('iframe').css("pointer-events", "none");
+		}
+		var onMapClickHandler = function(event) {
+			var that = $(this);
+			// Disable the click handler until the user leaves the map area
+			that.off('click', onMapClickHandler);
+			// Enable scrolling zoom
+			that.find('iframe').css("pointer-events", "auto");
+			// Handle the mouse leave event
+			that.on('mouseleave', onMapMouseleaveHandler);
+		}
+		// Enable map zooming with mouse scroll when the user clicks the map
+		$('.map').on('click', onMapClickHandler);
+
+		/* When the user clicks on the button, 
+		toggle between hiding and showing the dropdown content */
+		function myFunction() {
+			$("#sidebar-wrapper").toggleClass("active");
+		}
+	</script>
+
+	<style>
+.dropbtn {
+	background-color: #4CAF50;
+	color: white;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+	background-color: #3e8e41;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	overflow: auto;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown a:hover {
+	background-color: #f1f1f1
+}
+
+.show {
+	display: block;
+}
+</style>
+</h:head>
+<h:body bgcolor="white">
+
+	<div id="menu-toggle" class="btn btn-dark btn-lg toggle"
+		onclick="myFunction()">
+		<i class="fa fa-bars">Menu</i>
+		<div id="myDropdown" class="dropdown-content">
+				<a id="menu-close" href="#"
+					class="btn btn-light btn-lg pull-right toggle"> <i
+					class="fa fa-times"></i>
+				</a>
+				<a href="#top" onclick='$("#menu-close").click();' class="">Home</a>
+		</div>
+	</div>
+
+<div id="sidebar-wrapper">
+<h:form>
+<ul class="sidebar-nav">
+<h:commandLink id="menu-close" class="btn btn-light btn-lg pull-right toggle">
+			<i class="fa fa-times"></i>
+		</h:commandLink>
+		<li class="sidebar-brand"><a href="#top"
+			onclick='$("#menu-close").click();'><div class="login-logo">
+					<h:commandLink href="Main.html"><h1>
+							<b>Trip</b>Mate
+						</h1></h:commandLink>
+				</div></a></li>
+		<li><a href="#top" onclick='$("#menu-close").click();'>Home</a></li>
+		<li><a href="#about" onclick='$("#menu-close").click();'>About</a>
+		</li>
+		<li><a href="#services" onclick='$("#menu-close").click();'>Services</a>
+		</li>
+		<li><h:commandLink action="Login" value="Login" onclick='$("#menu-close").click();' rendered="#{sessionScope['isUserLoggedIn'] =='false' || sessionScope['isUserLoggedIn'] == null}"/>
+		</li>
+		<li><h:commandLink value="Register" action="Register" onclick='$("#menu-close").click();' rendered="#{sessionScope['isUserLoggedIn'] =='false' || sessionScope['isUserLoggedIn'] == null}"/>
+		</li>
+		<li><a href="#contact" onclick='$("#menu-close").click();'>Contact</a>
+		</li>
+		<li><h:commandLink action="#{loginBean.logout}" value="Logout" rendered="#{sessionScope['isUserLoggedIn'] =='true'}" onclick='$("#menu-close").click();'/>
+		</li>
+</ul>
+</h:form>
+</div>
+	<!-- Navigation -->
+	<!-- Header -->
+	<header id="top" class="header">
+	<div class="text-vertical-center">
+		<div class="login-logo">
+			<h:form>
+				<h:commandLink action="#{homeBean.getPage}">
+					<h1>
+						<b>Trip</b>Mate
+					</h1>
+					<f:setPropertyActionListener target="#{homeBean.pageName}"
+						value="Main" />
+				</h:commandLink>
+			</h:form>
+		</div>
+		<!--<h3>Free Bootstrap Themes &amp; Templates</h3>-->
+		<br /> <a href="#about" class="btn btn-dark btn-lg">Find Out More</a>
+	</div>
+	</header>
+	<!-- About -->
+	<section id="about" class="about">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2>TripMate for better experience!</h2>
+				<p class="lead">Share your lugguage! Make new Friends!</p>
+			</div>
+		</div>
+		<!-- /.row -->
+	</div>
+	<!-- /.container --> </section>
+
+	<!-- Services -->
+	<section id="services" class="services bg-primary">
+	<div class="container">
+		<div class="row text-center">
+			<div class="col-lg-10 col-lg-offset-1">
+				<h2>Our Services</h2>
+				<hr class="small">
+					<div class="row">
+						<div class="col-md-6 col-sm-6">
+							<div class="service-item">
+								<span class="fa-stack fa-4x"> <i
+									class="fa fa-circle fa-stack-2x"></i> <i
+									class="fa fa-cloud fa-stack-1x text-primary"></i>
+								</span>
+								<h4>
+									<strong>Find TravelMate</strong>
+								</h4>
+								<p>Make New Friends</p>
+								<!-- <a href="services.html" class="btn btn-light">Learn More</a> -->
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-6">
+							<div class="service-item">
+								<span class="fa-stack fa-4x"> <i
+									class="fa fa-circle fa-stack-2x"></i> <i
+									class="fa fa-cloud fa-stack-1x text-primary"></i>
+
+								</span>
+
+								<h4>
+									<strong>Luggage Sharing</strong>
+								</h4>
+								<p>Share your Luggage</p>
+								<!-- <a href="services.html" class="btn btn-light">Learn More</a> -->
+							</div>
+						</div>
+
+					</div>
+				</hr>
+				<!-- /.row (nested) -->
+			</div>
+			<!-- /.col-lg-10 -->
+		</div>
+		<!-- /.row -->
+	</div>
+	<!-- /.container --> </section>
+
+	<!-- Callout -->
+	<aside class="callout">
+	<div class="text-vertical-center">
+		<h1>TripMate For A Better Experience</h1>
+	</div>
+	</aside>
+
+	<!-- Call to Action -->
+	<aside class="call-to-action bg-primary">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h3>The buttons below are impossible to resist.</h3>
+				<h:form>
+					<h:commandButton action="Login" styleClass="btn btn-lg btn-light"
+						value="Login!" />
+					<h:commandButton action="Register" styleClass="btn btn-lg btn-dark"
+						value="Register!" />
+				</h:form>
+			</div>
+		</div>
+	</div>
+	</aside>
+
+	<!-- Map -->
+	<section id="contact" class="map"> <iframe width="100%"
+		height="100%" frameborder="0" scrolling="no" marginheight="0"
+		marginwidth="0"
+		src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
+	<br />
+	<small> <a
+		href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
+	</small> </section>
+
+	<!-- Footer -->
+	<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 col-lg-offset-1 text-center">
+				<h4>
+					<strong></strong>
+				</h4>
+				<p>
+					3481 Melrose Place <br />Beverly Hills, CA 90210
+				</p>
+				<ul class="list-unstyled">
+					<li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li>
+					<li><i class="fa fa-envelope-o fa-fw"></i> <a
+						href="mailto:name@example.com">TeamTripMate@gmail.com</a></li>
+				</ul>
+				<br />
+				<ul class="list-inline">
+					<li><a href="https://www.facebook.com/"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+					</li>
+					<li><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+					</li>
+					<li><a href="https://dribbble.com/"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
+					</li>
+				</ul>
+				<hr class="small">
+					<p class="text-muted">Copyright &copy; TripMate 2017</p>
+				</hr>
+			</div>
+		</div>
+	</div>
+	<a id="to-top" href="#top" class="btn btn-dark btn-lg"><i
+		class="fa fa-chevron-up fa-fw fa-1x"></i></a> </footer>
+</h:body>
+</html>

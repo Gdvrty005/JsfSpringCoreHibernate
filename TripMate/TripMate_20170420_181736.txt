@@ -1,0 +1,175 @@
+WARNING - 18:17:36: Creating types 
+WARNING - 18:17:36: Initializing types
+WARNING - 18:17:37: Generic post-process : Creating usages and associations
+WARNING - 18:17:37: Generic post-process : Creating activities
+WARNING - 18:17:38: Saving .uml resource: 20170420_181738
+WARNING - 18:17:38: Finished saving .uml resource: 20170420_181738
+ERROR - 18:17:38: Multiple exceptions
+----- exceptions : ----------
+unknown : No service found under key 'org.eclipse.papyrus.infra.core.services.EditorLifecycleManager'
+unknown : No service found under key 'org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor'
+unknown : No service found under key 'org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor'
+unknown : No service found under key 'org.eclipse.papyrus.infra.core.services.EditorLifecycleManager'
+org.eclipse.papyrus.infra.core.lifecycleevents.ISaveAndDirtyService : No service registered under 'interface org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor'
+org.eclipse.papyrus.infra.core.lifecycleevents.ISaveAndDirtyService : Bad state for service 'org.eclipse.papyrus.infra.core.lifecycleevents.ISaveAndDirtyService'. Expected 'initialized' found 'error'.
+----------------------------- 
+
+WARNING - 18:17:38: Creating class diagrams
+WARNING - 18:17:38: Creating activity diagrams
+WARNING - 18:17:38: Saving .notation resource
+WARNING - 18:17:38: Finished saving .notation resource
+WARNING - 18:17:38: Saving .di resource
+WARNING - 18:17:38: Finished saving .di resource
+WARNING - 18:17:38:    class diagram for packageImports
+WARNING - 18:17:41:    class diagram for TripMate
+WARNING - 18:17:41:    class diagram for com
+WARNING - 18:17:41:    class diagram for ucm
+WARNING - 18:17:41:    class diagram for bo
+WARNING - 18:17:41:    class diagram for impl
+WARNING - 18:17:41:    class diagram for dao
+WARNING - 18:17:41:    class diagram for impl
+WARNING - 18:17:41:    class diagram for model
+WARNING - 18:17:41:    activity diagram for TripMate
+WARNING - 18:17:42:    activity diagram for TripMate
+WARNING - 18:17:42:    activity diagram for TripMate
+WARNING - 18:17:42:    activity diagram for TripMate
+WARNING - 18:17:42:    activity diagram for TripMate
+WARNING - 18:17:42:    activity diagram for TripMate
+WARNING - 18:17:42:    activity diagram for TripMate
+WARNING - 18:17:42:    activity diagram for TripMate
+WARNING - 18:17:42:    activity diagram for TripMate
+WARNING - 18:17:42:    activity diagram for TripMate
+WARNING - 18:17:42:    activity diagram for TripMate
+WARNING - 18:17:42:    activity diagram for TripMate
+WARNING - 18:17:42:    activity diagram for TripMate
+WARNING - 18:17:42:    activity diagram for TripMate
+WARNING - 18:17:42:    activity diagram for TripMate
+WARNING - 18:17:42:    activity diagram for TripMate
+WARNING - 18:17:42:    activity diagram for TripMate
+WARNING - 18:17:42:    activity diagram for TripMate
+WARNING - 18:17:43:    activity diagram for TripMate
+WARNING - 18:17:43:    activity diagram for TripMate
+WARNING - 18:17:43:    activity diagram for TripMate
+WARNING - 18:17:43:    activity diagram for TripMate
+WARNING - 18:17:43:    activity diagram for TripMate
+WARNING - 18:17:43:    activity diagram for TripMate
+WARNING - 18:17:43:    activity diagram for TripMate
+WARNING - 18:17:43:    activity diagram for TripMate
+WARNING - 18:17:43:    activity diagram for TripMate
+WARNING - 18:17:43:    activity diagram for TripMate
+WARNING - 18:17:43:    activity diagram for TripMate
+WARNING - 18:17:43:    activity diagram for TripMate
+WARNING - 18:17:43:    activity diagram for TripMate
+WARNING - 18:17:44:    activity diagram for TripMate
+WARNING - 18:17:44:    activity diagram for TripMate
+WARNING - 18:17:44:    activity diagram for TripMate
+WARNING - 18:17:44:    activity diagram for TripMate
+WARNING - 18:17:44:    activity diagram for TripMate
+WARNING - 18:17:44:    activity diagram for TripMate
+WARNING - 18:17:44:    activity diagram for TripMate
+WARNING - 18:17:44:    activity diagram for TripMate
+WARNING - 18:17:44:    activity diagram for TripMate
+WARNING - 18:17:44:    activity diagram for TripMate
+WARNING - 18:17:45:    activity diagram for TripMate
+WARNING - 18:17:45:    activity diagram for TripMate
+WARNING - 18:17:45:    activity diagram for TripMate
+WARNING - 18:17:45:    activity diagram for TripMate
+WARNING - 18:17:45:    activity diagram for TripMate
+WARNING - 18:17:45:    activity diagram for TripMate
+WARNING - 18:17:45:    activity diagram for TripMate
+WARNING - 18:17:45:    activity diagram for TripMate
+WARNING - 18:17:45:    activity diagram for TripMate
+WARNING - 18:17:45:    activity diagram for TripMate
+WARNING - 18:17:45:    activity diagram for TripMate
+WARNING - 18:17:45:    activity diagram for TripMate
+WARNING - 18:17:45:    activity diagram for TripMate
+WARNING - 18:17:45:    activity diagram for TripMate
+WARNING - 18:17:45:    activity diagram for TripMate
+WARNING - 18:17:45:    activity diagram for TripMate
+WARNING - 18:17:45:    activity diagram for TripMate
+WARNING - 18:17:45:    activity diagram for TripMate
+WARNING - 18:17:45:    activity diagram for TripMate
+WARNING - 18:17:45:    activity diagram for TripMate
+WARNING - 18:17:46:    activity diagram for TripMate
+WARNING - 18:17:46:    activity diagram for TripMate
+WARNING - 18:17:46:    activity diagram for TripMate
+WARNING - 18:17:46:    activity diagram for TripMate
+WARNING - 18:17:46:    activity diagram for TripMate
+WARNING - 18:17:46:    activity diagram for TripMate
+WARNING - 18:17:46:    activity diagram for TripMate
+WARNING - 18:17:46:    activity diagram for TripMate
+WARNING - 18:17:46:    activity diagram for TripMate
+WARNING - 18:17:46:    activity diagram for TripMate
+WARNING - 18:17:46:    activity diagram for TripMate
+WARNING - 18:17:46:    activity diagram for TripMate
+WARNING - 18:17:46:    activity diagram for TripMate
+WARNING - 18:17:46:    activity diagram for TripMate
+WARNING - 18:17:47:    activity diagram for TripMate
+WARNING - 18:17:47:    activity diagram for TripMate
+WARNING - 18:17:47:    activity diagram for TripMate
+WARNING - 18:17:47:    activity diagram for TripMate
+WARNING - 18:17:47:    activity diagram for TripMate
+WARNING - 18:17:47:    activity diagram for TripMate
+WARNING - 18:17:47:    activity diagram for TripMate
+WARNING - 18:17:47:    activity diagram for TripMate
+WARNING - 18:17:47:    activity diagram for TripMate
+WARNING - 18:17:47:    activity diagram for TripMate
+WARNING - 18:17:47:    activity diagram for TripMate
+WARNING - 18:17:47:    activity diagram for TripMate
+WARNING - 18:17:47:    activity diagram for TripMate
+WARNING - 18:17:47:    activity diagram for TripMate
+WARNING - 18:17:47:    activity diagram for TripMate
+WARNING - 18:17:47:    activity diagram for TripMate
+WARNING - 18:17:47:    activity diagram for TripMate
+WARNING - 18:17:48:    activity diagram for TripMate
+WARNING - 18:17:48:    activity diagram for TripMate
+WARNING - 18:17:48:    activity diagram for TripMate
+WARNING - 18:17:48:    activity diagram for TripMate
+WARNING - 18:17:48:    activity diagram for TripMate
+WARNING - 18:17:48:    activity diagram for TripMate
+WARNING - 18:17:48:    activity diagram for TripMate
+WARNING - 18:17:48:    activity diagram for TripMate
+WARNING - 18:17:48:    activity diagram for TripMate
+WARNING - 18:17:48:    activity diagram for TripMate
+WARNING - 18:17:48:    activity diagram for TripMate
+WARNING - 18:17:48:    activity diagram for TripMate
+WARNING - 18:17:48:    activity diagram for TripMate
+WARNING - 18:17:48:    activity diagram for TripMate
+WARNING - 18:17:48:    activity diagram for TripMate
+WARNING - 18:17:48:    activity diagram for TripMate
+WARNING - 18:17:49:    activity diagram for TripMate
+WARNING - 18:17:49:    activity diagram for TripMate
+WARNING - 18:17:49:    activity diagram for TripMate
+WARNING - 18:17:49:    activity diagram for TripMate
+WARNING - 18:17:49:    activity diagram for TripMate
+WARNING - 18:17:49:    activity diagram for TripMate
+WARNING - 18:17:49:    activity diagram for TripMate
+WARNING - 18:17:49:    activity diagram for TripMate
+WARNING - 18:17:49:    activity diagram for TripMate
+WARNING - 18:17:49:    activity diagram for TripMate
+WARNING - 18:17:49:    activity diagram for TripMate
+WARNING - 18:17:49:    activity diagram for TripMate
+WARNING - 18:17:49:    activity diagram for TripMate
+WARNING - 18:17:49:    activity diagram for TripMate
+WARNING - 18:17:50:    activity diagram for TripMate
+WARNING - 18:17:50:    activity diagram for TripMate
+WARNING - 18:17:50:    activity diagram for TripMate
+WARNING - 18:17:50:    activity diagram for TripMate
+WARNING - 18:17:50:    activity diagram for TripMate
+WARNING - 18:17:50:    activity diagram for TripMate
+WARNING - 18:17:50:    activity diagram for TripMate
+WARNING - 18:17:50:    activity diagram for TripMate
+WARNING - 18:17:50:    activity diagram for TripMate
+WARNING - 18:17:50:    activity diagram for TripMate
+WARNING - 18:17:50:    activity diagram for TripMate
+WARNING - 18:17:50:    activity diagram for TripMate
+WARNING - 18:17:50:    activity diagram for TripMate
+WARNING - 18:17:51:    activity diagram for TripMate
+WARNING - 18:17:51:    activity diagram for TripMate
+WARNING - 18:17:51:    activity diagram for TripMate
+WARNING - 18:17:51:    activity diagram for TripMate
+WARNING - 18:17:51:    activity diagram for TripMate
+WARNING - 18:17:51:    activity diagram for TripMate
+WARNING - 18:17:51:    activity diagram for TripMate
+WARNING - 18:17:51:    activity diagram for TripMate
+WARNING - 18:17:51:    activity diagram for TripMate

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:a4j="http://richfaces.org/a4j">
+
+<h:head>
+	<title>Registration</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+		<!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css"/>
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"/>
+    <!-- Theme style -->
+    <link rel="stylesheet" href="#{request.contextPath}/resources/css/AdminLTE.min.css"/>
+    <!-- iCheck -->
+    <link rel="stylesheet" href="#{request.contextPath}/resources/css/blue.css"/>
+    <script type="text/javascript">
+    function pop(data){
+        if(data.status == "success"){
+           alert('Thanks for Registering.');
+        }
+    }
+</script>
+</h:head>
+<h:body styleClass="hold-transition login-page">
+			
+			<div class="register-box">
+
+				<div class="register-logo">
+					<h:form>
+				<h:commandLink action="#{homeBean.getPage}">
+					<h1>
+						<b>Trip</b>Mate
+					</h1>
+					<f:setPropertyActionListener target="#{homeBean.pageName}"
+						value="Main" />
+				</h:commandLink>
+			</h:form>
+				</div>
+				<div class="register-box-body">
+					<p class="login-box-msg">Register a new membership</p>
+					<h:messages id="hMessages" globalOnly="false" style='color:red'/>
+					<!-- <p:messages id="pMessages" autoUpdate="true" style='color:red'/> -->
+					<h:form>
+						<div class="form-group has-feedback">
+							<h:inputText styleClass="form-control"
+								value="#{registerBean.firstName}" id="FirstName" required="true" 
+								requiredMessage="Please provide First Name." validatorMessage="Please provide valid Name.">
+								<f:validateRegex pattern="[a-zA-Z]+"/>
+								</h:inputText>
+							<span class="glyphicon glyphicon-user form-control-feedback" />
+							<p:watermark for="FirstName" value="First name" />
+						</div>
+						<div class="form-group has-feedback">
+							<h:inputText styleClass="form-control"
+								value="#{registerBean.lastName}" id="LastName" required="true" 
+								requiredMessage="Please provide last Name." validatorMessage="Please provide valid Name.">
+								<f:validateRegex pattern="[a-zA-Z]+"/>
+								</h:inputText>
+							<span class="glyphicon glyphicon-user form-control-feedback" />
+							<p:watermark for="LastName" value="Last name" />
+						</div>
+						<div class="form-group has-feedback">
+							<h:inputText styleClass="form-control"
+								value="#{registerBean.emailId}" id="EmailId" required="true" requiredMessage="Please provide EmailId." validatorMessage="Please provide valid email.">
+								<f:validateRegex pattern="[A-Z0-9a-z._%-]+@[A-Z0-9a-z._%-]+\.[A-Za-z]{2,4}" />
+								</h:inputText>
+							<span class="glyphicon glyphicon-envelope form-control-feedback" />
+							<p:watermark for="EmailId" value="Email" />
+						</div>
+						<div class="form-group has-feedback">
+							<p:password styleClass="form-control"
+								value="#{registerBean.password}" id="Password" required="true" requiredMessage="Please provide Password."
+								match="RetypePassword" validatorMessage="Both passwords must match."/>
+							<span class="glyphicon glyphicon-lock form-control-feedback" />
+							<p:watermark for="Password" value="Password" />
+						</div>
+						<div class="form-group has-feedback">
+							<p:password styleClass="form-control"
+								value="#{registerBean.password}" id="RetypePassword" required="true" requiredMessage="Please provide Confirm Password."/>
+							<span class="glyphicon glyphicon-log-in form-control-feedback" />
+							<p:watermark for="RetypePassword" value="Confirm password" />
+						</div>
+						<div style="margin-right: -15px; margin-left: 5px;">
+							<div class="col-xs-8">
+								<div class="checkbox icheck">
+								</div>
+							</div>
+							<!-- /.col -->
+							<div class="col-xs-4">
+								<h:commandButton value="Register"
+									styleClass="btn btn-primary btn-block btn-flat"
+									action="#{registerBean.registerUser}">
+									</h:commandButton>
+							</div>
+							<!-- /.col -->
+						</div>
+						</h:form>
+						<h:form>
+						<h:commandLink action="Login" styleClass="text-center"
+							value="I already have a membership" />
+					</h:form>
+				</div>
+				<!-- /.form-box -->
+			</div>
+</h:body>
+</html>

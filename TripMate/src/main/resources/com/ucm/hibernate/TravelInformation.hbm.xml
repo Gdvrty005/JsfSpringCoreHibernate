@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.ucm.model.TravelInformation" 
+        table="T_TRAVEL_INFORMATION" catalog="tripmate">
+        <id name="id" type="long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="emailId" type="string">
+            <column name="EMAIL_ID" length="50"  />
+        </property>
+        <property name="travelFrom" type="string">
+            <column name="TRAVEL_FROM" length="50" />
+        </property>
+        <property name="travelDestination" type="string">
+            <column name="TRAVEL_DESTINATION" length="50" />
+        </property>
+        <property name="dateOfTravel" type="string">
+            <column name="DATE_OF_TRAVEL" length="12" />
+        </property>
+        <property name="weight" type="int">
+            <column name="WEIGHT" length="11" />
+        </property>
+        <property name="serviceType" type="string">
+            <column name="SERVICE_TYPE" length="20" />
+        </property>
+        <property name="serviceProvEmail" type="string">
+            <column name="SERVICE_PROVIDER_EMAIL" length="50" />
+        </property>
+        <property name="accompanyCount" type="int">
+            <column name="ACCOMPANY_PEOPLE" length="2" />
+        </property>
+         <property name="peopleAccompanied" type="int">
+            <column name="PEOPLE_ACCOMPANIED" length="2" />
+        </property>
+    </class>
+</hibernate-mapping>

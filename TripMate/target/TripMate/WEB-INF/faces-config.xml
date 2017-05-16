@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+    http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+    version="2.0">
+ 
+	<application>
+    	<el-resolver>
+    		org.springframework.web.jsf.el.SpringBeanFacesELResolver
+    	</el-resolver>
+  	</application>
+ 	
+	
+	<managed-bean>
+		<managed-bean-name>registerBean</managed-bean-name>
+		<managed-bean-class>com.ucm.RegisterController</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+		<managed-property>
+			<property-name>registerBo</property-name>
+			<value>#{registerBo}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>mailBean</property-name>
+			<value>#{mailBean}</value>
+		</managed-property>
+		<managed-property>
+		<property-name>loginBo</property-name>
+		<value>#{loginBo}</value>
+		</managed-property>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>homeBean</managed-bean-name>
+		<managed-bean-class>com.ucm.HomeController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>loginBean</managed-bean-name>
+		<managed-bean-class>com.ucm.LoginController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+		<property-name>loginBo</property-name>
+		<value>#{loginBo}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>mailBean</property-name>
+			<value>#{mailBean}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>agentBo</property-name>
+			<value>#{agentBo}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>registerBo</property-name>
+			<value>#{registerBo}</value>
+		</managed-property>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>masterRefBean</managed-bean-name>
+		<managed-bean-class>com.ucm.MasterReferenceController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>masterReferenceBo</property-name>
+			<value>#{masterReferenceBo}</value>
+		</managed-property>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>agentBean</managed-bean-name>
+		<managed-bean-class>com.ucm.AgentController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>agentBo</property-name>
+			<value>#{agentBo}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>mailBean</property-name>
+			<value>#{mailBean}</value>
+		</managed-property>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>serviceBean</managed-bean-name>
+		<managed-bean-class>com.ucm.ServiceRequestController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>agentBo</property-name>
+			<value>#{agentBo}</value>
+		</managed-property>
+	</managed-bean>
+	
+ 
+</faces-config>
